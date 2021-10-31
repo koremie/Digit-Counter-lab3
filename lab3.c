@@ -1,19 +1,20 @@
 #include <stdio.h>
 
-int digit_counter(long long n);
+int digitCounter(long long num);
 
 int main(void) {
-	long long n;
-	do {
-		printf("enter a positive number: ");
-		scanf_s("%lld", &n);
-	} while (n < 0);
-	int d = digit_counter(n);
-	printf("number %lld consists of %i digits\n", n, d);
+	long long number;
+	do 
+	{
+		printf("Enter a positive number: ");
+		scanf_s("%lld", &number);
+	} while (number < 0);
+
+	printf("Number %lld consists of %i digits\n", number, digitCounter(number));
 }
 
-int digit_counter(long long num) {
-	int i;
-	for (i = 0; num != 0; num /= 10, i++) {}
-	return i;
+int digitCounter(long long num) {
+	int digitCount;
+	for (digitCount = 0; num != 0; num /= 10, digitCount++) {}
+	return digitCount;
 }
